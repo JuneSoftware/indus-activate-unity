@@ -5,9 +5,6 @@ module.exports = { createManualActivationFile, activateManualLicense, activateSe
 
 async function activateSerialLicense(unityPath, username, password, serial) {
     const stdout = await executeUnity(unityPath, `-batchmode -nographics -username "${username}" -password "${password}" -serial "${serial}" -quit`);
-    if (!stdout.includes('Successfully activated ULF license')) {
-        throw new Error('Activation failed');
-    }
 }
 
 async function createManualActivationFile(unityPath) {
