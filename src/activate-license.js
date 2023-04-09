@@ -11,8 +11,8 @@ async function run() {
             throw new Error('unity path not found');
         }
 
-        let unityUsername = core.getInput('unity-username', { required: true });
-        let unityPassword = core.getInput('unity-password', { required: true });
+        let unityUsername = core.getInput('unity-username');
+        let unityPassword = core.getInput('unity-password');
         let unityAuthenticatorKey = core.getInput('unity-authenticator-key');
         let unitySerial = core.getInput('unity-serial');
 

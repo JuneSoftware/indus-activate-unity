@@ -9,8 +9,8 @@ async function run() {
             throw new Error('unity path not found');
         }
         if (core.getInput('unity-serial')) {
-            const unityUsername = core.getInput('unity-username', { required: true });
-            const unityPassword = core.getInput('unity-password', { required: true });
+            const unityUsername = core.getInput('unity-username');
+            const unityPassword = core.getInput('unity-password');
             await unity.returnLicense(unityPath, unityUsername, unityPassword);
         } else {
             const usedLicence = process.env.UNITY_LICENCE;
