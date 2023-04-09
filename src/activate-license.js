@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const exec = require('@actions/exec');
 const path = require('path');
 const unity = require('./unity');
+const floatingLicence = require('./floatingLicence')
 
 async function run() {
     try {
@@ -9,10 +10,28 @@ async function run() {
         if (!unityPath) {
             throw new Error('unity path not found');
         }
-        const unityUsername = core.getInput('unity-username', { required: true });
-        const unityPassword = core.getInput('unity-password', { required: true });
-        const unityAuthenticatorKey = core.getInput('unity-authenticator-key');
-        const unitySerial = core.getInput('unity-serial');
+
+        let unityUsername = core.getInput('unity-username', { required: true });
+        let unityPassword = core.getInput('unity-password', { required: true });
+        let unityAuthenticatorKey = core.getInput('unity-authenticator-key');
+        let unitySerial = core.getInput('unity-serial');
+
+        //If username, password and authenticator key is not provided as inputs then fetch them from floating licence API
+        //Note: Floating licence will only support serial based licence
+        if (!unityUsername && !unityPassword && !unityAuthenticatorKey) {
+            const licence = await floatingLicence.execute('get', '');
+            if (licence === undefined || licence.Key === undefined) {
+                throw new Error('Licence fetch failed');
+            } else {
+                unityUsername = String(licence.Email);
+                unityPassword = String(licence.Password);
+                unitySerial = String(licence.Key);
+
+                core.exportVariable('UNITY_LICENCE', JSON.stringify(licence));
+                core.setSecret(JSON.stringify(licence))
+                console.log(`Licence fetched ${unitySerial.substring(0, 7)}-****-****-****-****`);
+            }
+        }
 
         if (unitySerial) {
             await unity.activateSerialLicense(unityPath, unityUsername, unityPassword, unitySerial);

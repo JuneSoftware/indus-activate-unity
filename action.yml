@@ -15,7 +15,14 @@ inputs:
     required: false
   unity-serial:
     description: Unity license serial key. Used for Plus/Professional license activation
-    required: false
+  audience:
+    required: true
+    description: 'Audience link for cloud function'
+    default: ''
+  serviceAccountKey:
+    required: true
+    description: 'JSON key of authorized service account'
+    default: ''
 runs:
   using: node16
   main: src/activate-license.js

@@ -1,11 +1,8 @@
-# activate-unity
-
-<p align="left">
-  <a href="https://github.com/kuler90/activate-unity/actions"><img alt="GitHub Actions status" src="https://github.com/kuler90/activate-unity/workflows/test%20personal%20license/badge.svg?branch=master"></a>
-</p>
+# Activate Unity
 
 GitHub Action to activate personal or professional Unity license. License will be automatically returned at the end of a job.
 
+Supports regular and custom floating licence.
 Works on Linux, macOS and Windows.
 
 ## Inputs
@@ -30,6 +27,12 @@ Unity account [authenticator key](#How-to-obtain-authenticator-key) for Authenti
 
 Unity license serial key. Used for Plus/Professional license activation.
 
+### `audience`
+Audience link for Google Cloud Function, Google Cloud Function [trigger url](https://cloud.google.com/functions/docs/console-quickstart)
+
+### `serviceAccountKey`
+[JSON key](https://cloud.google.com/iam/docs/keys-create-delete#creating) of authorized service account
+
 ## How to obtain authenticator key
 
 1. Login to Unity account
@@ -37,28 +40,3 @@ Unity license serial key. Used for Plus/Professional license activation.
 3. Activate Two Factor Authentication through Authenticator App
 4. On page with QR code click "Can't scan the barcode?" and save key (remove spaces in it)
 5. Finish activation
-
-## Example usage
-
-```yaml
-- name: Checkout project
-  uses: actions/checkout@v2
-
-- name: Setup Unity
-  uses: kuler90/setup-unity@v1
-  with:
-    unity-modules: android
-
-- name: Activate Unity
-  uses: kuler90/activate-unity@v1
-  with:
-    unity-username: ${{ secrets.UNITY_USERNAME }}
-    unity-password: ${{ secrets.UNITY_PASSWORD }}
-    unity-authenticator-key: ${{ secrets.UNITY_AUTHENTICATOR_KEY }}
-
-- name: Build Unity
-  uses: kuler90/build-unity@v1
-  with:
-    build-target: Android
-    build-path: ./build.apk
-```
