@@ -1,51 +1,40 @@
 const axios = require('axios');
-const { JWT } = require('google-auth-library');
 const core = require('@actions/core');
 
-const privatekey = core.getInput('serviceAccountKey')
-const audience = core.getInput('audience')
+const baseUrl = core.getInput('audience');
+const apiKey = core.getInput('apiKey')
 
-module.exports = { execute };
+module.exports = { reserve, release };
 
-async function getIDToken() 
-{
-  try 
-  {
-    const privateKeyJSON = JSON.parse(privatekey);
-    const jwtClient = new JWT({ email: privateKeyJSON.client_email, key: privateKeyJSON.private_key, scopes: [audience] });
-    const tokenResponse = await jwtClient.authorize();
-    return tokenResponse.id_token;
-  } 
-  catch (error) 
-  {
-    core.setFailed(error.message);
+async function reserve(durationInMinutes) {
+  const url = `${baseUrl}/reservations`;
+
+  const headers = {
+    "X-Api-Key": apiKey,
+    "Content-Type": "application/json"
+  };
+  
+  const data = { durationInMinutes };
+
+  try {
+    const response = await axios.post(url, data, { headers: headers });
+    
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      throw new Error("Error: No license found.");
+    } else {
+      throw error;
+    }
   }
 }
 
-async function execute(message, serialKey)
-{
-  try 
-  {
-    const idToken = await getIDToken(); //Get ID token for authorization
+async function release(reservationId) {
+  const url = `${baseUrl}/reservations/${reservationId}`;
 
-    const body = {
-      'message': message,
-      'serialKey': serialKey
-    };
-    const headers = {
-      headers: {
-        'Authorization': `bearer ${idToken}`, 
-        'Content-Type': 'application/json'
-      },
-      timeout: 70000
-    }
+  const headers = {
+    "X-Api-Key": apiKey
+  };
 
-    const response = await axios.post(audience, body, headers); //Post the HTTP request using the ID token
-
-    return response.data;
-  }
-  catch (error) 
-  {
-    core.setFailed(error.message);
-  }
+  await axios.delete(url, { headers: headers });
 }

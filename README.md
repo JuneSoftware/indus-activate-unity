@@ -30,8 +30,8 @@ Unity license serial key. Used for Plus/Professional license activation.
 ### `audience`
 Audience link for Google Cloud Function, Google Cloud Function [trigger url](https://cloud.google.com/functions/docs/console-quickstart)
 
-### `serviceAccountKey`
-[JSON key](https://cloud.google.com/iam/docs/keys-create-delete#creating) of authorized service account
+### `apiKey`
+API key needed for HTTP requests
 
 ## How to obtain authenticator key
 

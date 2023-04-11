@@ -18,11 +18,11 @@ async function run() {
                 throw new Error('Licence return failed');
             } else {
                 const licence = JSON.parse(usedLicence)
-                const licenceResponse = await floatingLicence.execute('set', licence.Key);
-                const unityUsername = String(licence.Email)
-                const unityPassword = String(licence.Password)
+                await floatingLicence.release(licence.id);
+                const unityUsername = String(licence.username)
+                const unityPassword = String(licence.password)
                 await unity.returnLicense(unityPath, unityUsername, unityPassword);
-                console.log(`Licence returned ${licence.Key.substring(0, 7)}-****-****-****-****`);
+                console.log(`Licence returned ${licence.serialId.substring(0, 7)}-****-****-****-****`);
             }
         }
     } catch (error) {

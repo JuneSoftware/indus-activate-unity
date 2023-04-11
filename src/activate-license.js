@@ -19,13 +19,13 @@ async function run() {
         //If username, password and authenticator key is not provided as inputs then fetch them from floating licence API
         //Note: Floating licence will only support serial based licence
         if (!unityUsername && !unityPassword && !unityAuthenticatorKey) {
-            const licence = await floatingLicence.execute('get', '');
-            if (licence === undefined || licence.Key === undefined) {
+            const licence = await floatingLicence.reserve(240);
+            if (licence === undefined || licence.id === undefined) {
                 throw new Error('Licence fetch failed');
             } else {
-                unityUsername = String(licence.Email);
-                unityPassword = String(licence.Password);
-                unitySerial = String(licence.Key);
+                unityUsername = String(licence.username);
+                unityPassword = String(licence.password);
+                unitySerial = String(licence.serialId);
 
                 core.exportVariable('UNITY_LICENCE', JSON.stringify(licence));
                 core.setSecret(JSON.stringify(licence))
