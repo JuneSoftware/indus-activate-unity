@@ -28,7 +28,7 @@ async function executeUnity(unityPath, args) {
     if (process.platform === 'linux') {
         return await execute(`xvfb-run --auto-servernum "${unityPath}" ${args}`, true);
     } else {
-        return await execute(`"${unityPath}" ${args}`, true);
+        return await execute(`cmd /c "${unityPath}" ${args}`, true);
     }
 }
 
