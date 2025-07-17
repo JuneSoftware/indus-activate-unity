@@ -27,7 +27,9 @@ async function returnLicense(unityPath, username, password) {
 async function executeUnity(unityPath, args) {
     if (process.platform === 'linux') {
         return await execute(`xvfb-run --auto-servernum "${unityPath}" ${args}`, true);
-    } else {
+    } else if (process.platform === 'darwin') {
+        return await execute(`"${unityPath}" ${args}`, true);
+    } else if (process.platform === 'win32') {
         return await execute(`cmd /c "${unityPath}" ${args}`, true);
     }
 }
