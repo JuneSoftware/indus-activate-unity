@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const unity = require('./unity');
-const floatingLicence = require('./floatingLicence')
+const licencePool = require('./licencePool');
 
 async function run() {
     try {
@@ -18,7 +18,7 @@ async function run() {
                 throw new Error('Licence return failed');
             } else {
                 const licence = JSON.parse(usedLicence)
-                await floatingLicence.release(licence.id);
+                await licencePool.release(licence.id);
                 const unityUsername = String(licence.username)
                 const unityPassword = String(licence.password)
                 await unity.returnLicense(unityPath, unityUsername, unityPassword);

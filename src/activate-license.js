@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const exec = require('@actions/exec');
 const path = require('path');
 const unity = require('./unity');
-const floatingLicence = require('./floatingLicence')
+const licencePool = require('./licencePool');
 
 async function run() {
     try {
@@ -16,10 +16,10 @@ async function run() {
         let unityAuthenticatorKey = core.getInput('unity-authenticator-key');
         let unitySerial = core.getInput('unity-serial');
 
-        //If username, password and authenticator key is not provided as inputs then fetch them from floating licence API
-        //Note: Floating licence will only support serial based licence
+        //If username, password and authenticator key is not provided as inputs then reserve a seat from the licence pool
+        //Note: The pool only supports serial based licences
         if (!unityUsername && !unityPassword && !unityAuthenticatorKey) {
-            const licence = await floatingLicence.reserve(240);
+            const licence = await licencePool.reserve(240);
             if (licence === undefined || licence.id === undefined) {
                 throw new Error('Licence fetch failed');
             } else {
