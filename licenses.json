@@ -1,0 +1,82 @@
+[
+  {
+    "id": "6a1820395566885619dcf244",
+    "game": "indus",
+    "username": "reshama4400987@gmail.com",
+    "password": "Reshama_710",
+    "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a1824cc5566885619dcf245",
+    "game": "indus",
+    "username": "reshama4400987@gmail.com",
+    "password": "Reshama_710",
+    "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a19a3698b692204f87b4083",
+    "game": "indus",
+    "username": "bishwasdebendra@gmail.com",
+    "password": "Deven@78dra",
+    "serialId": "SC-MU7E-JYUF-W4U8-M5K4-3FYM",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a19a3d98b692204f87b4084",
+    "game": "indus",
+    "username": "bishwasdebendra@gmail.com",
+    "password": "Deven@78dra",
+    "serialId": "SC-MU7E-JYUF-W4U8-M5K4-3FYM",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a19a43b8b692204f87b4085",
+    "game": "indus",
+    "username": "artiyadav45789043@gmail.com",
+    "password": "Ar090_tit",
+    "serialId": "SC-9KGQ-36ZM-828C-4WTU-GTSW",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a19a45e8b692204f87b4086",
+    "game": "indus",
+    "username": "artiyadav45789043@gmail.com",
+    "password": "Ar090_tit",
+    "serialId": "SC-9KGQ-36ZM-828C-4WTU-GTSW",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a2bdc95b6f3091715c86d8a",
+    "game": "indus",
+    "username": "pillyamruta@gmail.com",
+    "password": "Amruta..703",
+    "serialId": "SC-RQKY-TSBB-KMZ5-JCVV-U64K",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  },
+  {
+    "id": "6a2bdca9b6f3091715c86d8b",
+    "game": "indus",
+    "username": "pillyamruta@gmail.com",
+    "password": "Amruta..703",
+    "serialId": "SC-RQKY-TSBB-KMZ5-JCVV-U64K",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
+  }
+]
