@@ -15,14 +15,14 @@ inputs:
     required: false
   unity-serial:
     description: Unity license serial key. Used for Plus/Professional license activation
-  audience:
+  game:
     required: false
-    description: 'URL link for cloud function'
-  apiKey:
+    description: 'Game key of the licence pool seat to reserve (e.g. indus)'
+  pool-token:
     required: false
-    description: 'API key needed for HTTP requests'
+    description: 'GitHub token with Contents read/write on this repo, used for the licence pool state branch'
 runs:
-  using: node16
+  using: node20
   main: src/activate-license.js
   post: src/return-license.js
 branding:
