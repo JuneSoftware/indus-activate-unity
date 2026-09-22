@@ -5,9 +5,9 @@
     "username": "reshama4400987@gmail.com",
     "password": "Reshama_710",
     "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
-    "status": "reserved",
-    "expiresAt": "2026-09-22T11:32:35.201Z",
-    "reservedBy": "JuneSoftware/Indus-03/35700040263"
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null
   },
   {
     "id": "6a1824cc5566885619dcf245",
