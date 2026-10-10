@@ -65,9 +65,9 @@
     "username": "pillyamruta@gmail.com",
     "password": "Amruta..703",
     "serialId": "SC-RQKY-TSBB-KMZ5-JCVV-U64K",
-    "status": "available",
-    "expiresAt": null,
-    "reservedBy": null
+    "status": "reserved",
+    "expiresAt": "2026-10-11T02:59:28.632Z",
+    "reservedBy": "JuneSoftware/Indus-03/38093325607"
   },
   {
     "id": "6a2bdca9b6f3091715c86d8b",
