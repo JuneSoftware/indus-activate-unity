@@ -15,12 +15,11 @@
     "username": "reshama4400987@gmail.com",
     "password": "Reshama_710",
     "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
-    "status": "blocked",
+    "status": "available",
     "expiresAt": null,
-    "reservedBy": "JuneSoftware/Indus-03/40708541825",
-    "machine": "indus03-runner-mac-18",
-    "machineRun": "JuneSoftware/Indus-03/40708541825",
-    "blockedReason": "[Licensing::Client] Error: Code 20111 while processing request (status: serial has reached the maximum number of activations.) @ 2026-10-28T14:43:06.365Z"
+    "reservedBy": null,
+    "machine": null,
+    "machineRun": null
   },
   {
     "id": "6a19a3698b692204f87b4083",
