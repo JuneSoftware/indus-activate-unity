@@ -41,11 +41,12 @@
     "username": "bishwasdebendra@gmail.com",
     "password": "Deven@78dra",
     "serialId": "SC-MU7E-JYUF-W4U8-M5K4-3FYM",
-    "status": "reserved",
-    "expiresAt": "2026-10-28T22:43:20.042Z",
+    "status": "blocked",
+    "expiresAt": null,
     "reservedBy": "JuneSoftware/Indus-03/40708541825",
     "machine": "indus03-runner-mac-18",
-    "machineRun": "JuneSoftware/Indus-03/40708541825"
+    "machineRun": "JuneSoftware/Indus-03/40708541825",
+    "blockedReason": "[Licensing::Client] Error: Code 20111 while processing request (status: serial has reached the maximum number of activations.) @ 2026-10-28T14:43:29.593Z"
   },
   {
     "id": "6a19a43b8b692204f87b4085",
