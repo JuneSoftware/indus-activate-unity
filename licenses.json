@@ -5,9 +5,11 @@
     "username": "reshama4400987@gmail.com",
     "password": "Reshama_710",
     "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
-    "status": "available",
-    "expiresAt": null,
-    "reservedBy": null
+    "status": "reserved",
+    "expiresAt": "2026-11-01T06:59:14.923Z",
+    "reservedBy": "JuneSoftware/Indus-03/41250511168",
+    "machine": "indus03-runner-mac-18",
+    "machineRun": "JuneSoftware/Indus-03/41250511168"
   },
   {
     "id": "6a1824cc5566885619dcf245",
@@ -15,9 +17,9 @@
     "username": "reshama4400987@gmail.com",
     "password": "Reshama_710",
     "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
-    "status": "reserved",
-    "expiresAt": "2026-10-30T17:13:08.624Z",
-    "reservedBy": "JuneSoftware/Indus-03/41061224870",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null,
     "machine": null,
     "machineRun": null
   },
