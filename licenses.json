@@ -43,11 +43,11 @@
     "username": "bishwasdebendra@gmail.com",
     "password": "Deven@78dra",
     "serialId": "SC-MU7E-JYUF-W4U8-M5K4-3FYM",
-    "status": "reserved",
-    "expiresAt": "2026-11-05T16:10:52.359Z",
-    "reservedBy": "JuneSoftware/Indus-03/41992382278",
-    "machine": "indus03-runner-mac-16",
-    "machineRun": "JuneSoftware/Indus-03/41992382278"
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null,
+    "machine": null,
+    "machineRun": null
   },
   {
     "id": "6a19a43b8b692204f87b4085",
