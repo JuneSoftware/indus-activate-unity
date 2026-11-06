@@ -67,11 +67,12 @@
     "username": "artiyadav45789043@gmail.com",
     "password": "Ar090_tit",
     "serialId": "SC-9KGQ-36ZM-828C-4WTU-GTSW",
-    "status": "reserved",
-    "expiresAt": "2026-11-06T18:55:57.221Z",
+    "status": "blocked",
+    "expiresAt": null,
     "reservedBy": "JuneSoftware/Indus-03/42203804261",
     "machine": "indus03-runner-mac-18",
-    "machineRun": "JuneSoftware/Indus-03/42203804261"
+    "machineRun": "JuneSoftware/Indus-03/42203804261",
+    "blockedReason": "[Licensing::Client] Error: Code 20111 while processing request (status: serial has reached the maximum number of activations.) @ 2026-11-06T10:56:11.564Z"
   },
   {
     "id": "6a2bdc95b6f3091715c86d8a",
