@@ -31,9 +31,9 @@
     "username": "bishwasdebendra@gmail.com",
     "password": "Deven@78dra",
     "serialId": "SC-MU7E-JYUF-W4U8-M5K4-3FYM",
-    "status": "reserved",
-    "expiresAt": "2026-11-06T15:29:22.864Z",
-    "reservedBy": "JuneSoftware/Indus-03/42202214905",
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null,
     "machine": null,
     "machineRun": null
   },
