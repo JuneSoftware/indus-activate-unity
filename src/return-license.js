@@ -8,11 +8,20 @@ async function run() {
         if (!unityPath) {
             throw new Error('unity path not found');
         }
+        if (core.getInput('mode') === 'release') {
+            // Post step of the explicit early-release invocation: the main
+            // step did the work (or deliberately skipped it); nothing to do.
+            return;
+        }
         if (core.getInput('unity-serial')) {
             const unityUsername = core.getInput('unity-username');
             const unityPassword = core.getInput('unity-password');
             await unity.returnLicense(unityPath, unityUsername, unityPassword);
         } else {
+            if (process.env.UNITY_LICENCE_RETURNED === 'true') {
+                console.log('Licence already returned by the early-release step');
+                return;
+            }
             const usedLicence = process.env.UNITY_LICENCE;
             if (usedLicence === undefined) {
                 throw new Error('Licence return failed');

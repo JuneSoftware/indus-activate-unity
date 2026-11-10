@@ -21,6 +21,9 @@ inputs:
   pool-token:
     required: false
     description: 'GitHub token with Contents read/write on this repo, used for the licence pool state branch'
+  mode:
+    required: false
+    description: "Set to 'release' to return the pooled licence immediately (use as an explicit step after the last Unity-using step); default activates"
 runs:
   using: node20
   main: src/activate-license.js
