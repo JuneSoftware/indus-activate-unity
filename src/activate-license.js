@@ -14,6 +14,14 @@ async function run() {
             throw new Error('unity path not found');
         }
 
+        // mode=release: explicit early-release step placed after the last
+        // Unity-using step of the job. Returns the pooled licence now instead
+        // of holding it through uploads/notifications until the post step.
+        if (core.getInput('mode') === 'release') {
+            await releasePooledLicence(unityPath);
+            return;
+        }
+
         const unityUsername = core.getInput('unity-username');
         const unityPassword = core.getInput('unity-password');
         const unityAuthenticatorKey = core.getInput('unity-authenticator-key');
@@ -80,6 +88,29 @@ async function activateFromPool(unityPath) {
     }
 
     throw new Error(`Could not activate any pool seat after ${MAX_SEAT_ATTEMPTS} attempts`);
+}
+
+async function releasePooledLicence(unityPath) {
+    if (process.env.UNITY_LICENCE_RETURNED === 'true') {
+        console.log('Licence already returned; nothing to do');
+        return;
+    }
+    const usedLicence = process.env.UNITY_LICENCE;
+    if (!usedLicence) {
+        console.log('No pooled licence held by this job; nothing to release');
+        return;
+    }
+    try {
+        const licence = JSON.parse(usedLicence);
+        await licencePool.release(licence.id);
+        await unity.returnLicense(unityPath, String(licence.username), String(licence.password));
+        core.exportVariable('UNITY_LICENCE_RETURNED', 'true');
+        console.log(`Licence returned early ${String(licence.serialId).substring(0, 7)}-****-****-****-****`);
+    } catch (error) {
+        // Never fail the build over an early release - the end-of-job post
+        // step retries the full return as long as the flag stays unset.
+        core.warning(`Early licence release failed (post step will retry): ${error.message}`);
+    }
 }
 
 run();
