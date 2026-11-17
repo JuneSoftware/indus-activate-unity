@@ -53,11 +53,11 @@
     "username": "artiyadav45789043@gmail.com",
     "password": "Ar090_tit",
     "serialId": "SC-9KGQ-36ZM-828C-4WTU-GTSW",
-    "status": "available",
-    "expiresAt": null,
-    "reservedBy": null,
-    "machine": null,
-    "machineRun": null
+    "status": "reserved",
+    "expiresAt": "2026-11-17T21:47:17.083Z",
+    "reservedBy": "JuneSoftware/Indus-03/44095704321",
+    "machine": "indus03-runner-win-10",
+    "machineRun": "JuneSoftware/Indus-03/44095704321"
   },
   {
     "id": "6a19a45e8b692204f87b4086",
