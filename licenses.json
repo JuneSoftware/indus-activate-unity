@@ -17,11 +17,11 @@
     "username": "reshama4400987@gmail.com",
     "password": "Reshama_710",
     "serialId": "SC-H9T5-DYC4-9H6N-BYWF-5TK5",
-    "status": "reserved",
-    "expiresAt": "2026-11-22T11:53:57.648Z",
-    "reservedBy": "JuneSoftware/Indus-03/44982610965",
-    "machine": "indus03-runner-mac-18",
-    "machineRun": "JuneSoftware/Indus-03/44982610965"
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null,
+    "machine": null,
+    "machineRun": null
   },
   {
     "id": "6a19a3698b692204f87b4083",
