@@ -79,11 +79,11 @@
     "username": "pillyamruta@gmail.com",
     "password": "Amruta..703",
     "serialId": "SC-RQKY-TSBB-KMZ5-JCVV-U64K",
-    "status": "reserved",
-    "expiresAt": "2026-11-27T22:00:52.650Z",
-    "reservedBy": "JuneSoftware/Indus-03/46011912383",
-    "machine": "indus03-runner-mac-18",
-    "machineRun": "JuneSoftware/Indus-03/46011912383"
+    "status": "available",
+    "expiresAt": null,
+    "reservedBy": null,
+    "machine": null,
+    "machineRun": null
   },
   {
     "id": "6a2bdca9b6f3091715c86d8b",
